@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/header') %>
+  <body>
+    <div class="container-fluid mx-auto" style="width: 600px">
+      <h1>Welcome to Feedback App</h1>
+      <table>
+        <td>
+          <form action="/signin" method="get">
+            <button class="btn btn-primary">Sign in</button>
+          </form>
+        </td>
+        <td>
+          <form action="/signup" method="get">
+            <button class="btn btn-primary">Sign up</button>
+          </form>
+        </td>
+      </table>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>

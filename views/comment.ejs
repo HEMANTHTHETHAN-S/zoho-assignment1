@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header') %>
+  <body>
+    <div class="container-fuild">
+    <label for="label">What would like to share with world?</label>
+      <div>
+        <form action="/comment/<%= user._id %> " method="post">
+          <textarea
+          style="overflow: scroll"
+          name="comment"
+          id="label"
+          cols="30"
+          rows="10"
+          ></textarea>
+          <a href="/">Logout</a>
+          <button type="submit" class="btn btn-outline-dark">Submit</button>
+        </form>
+        
+      </div>
+      <div
+        style="
+          width: 600px;
+          height: 250px;
+          line-height: 3em;
+          overflow: scroll;
+          padding: 5px;
+        "
+      >
+        
+        <form action="/comment/<%= user._id %>/filter" method="get" class="d-flex justify-content-between" >
+          <b>Comment</b> 
+          <button type="submit" class=" btn btn-outline-dark" >Filter</button>
+        </form>
+        
+        <% for(let = 0;let<comments.length;let++){ %>
+        <div>
+          <b><%= comments[let].email %>: </b>
+          <p style="display: inline"><%= comments[let].comment %></p>
+        </div>
+        <% } %>
+      </div>
+      
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>
